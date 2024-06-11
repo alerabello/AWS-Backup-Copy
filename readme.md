@@ -8,13 +8,6 @@ Este é um lambda function para copiar os recovery points do AWS Backup de um ou
 
 Certifique-se de que o IAM Role associado à função Lambda tenha permissões suficientes para realizar as operações necessárias, como listar recovery points, iniciar jobs de cópia e verificar o status dos jobs.
 
-### Variáveis de Ambiente
-
-Antes de implantar a função Lambda, defina as seguintes variáveis de ambiente:
-
-- `AWS_DEFAULT_REGION`: A região padrão onde a função Lambda será executada.
-- `AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY`: Credenciais com permissões adequadas para acessar os serviços AWS necessários.
-
 ### Configurações Específicas
 
 - `regions`: Uma lista de regiões onde os vaults de origem estão localizados.
@@ -22,6 +15,12 @@ Antes de implantar a função Lambda, defina as seguintes variáveis de ambiente
 - `source_backup_vault_names`: Um dicionário mapeando as regiões aos nomes dos vaults de origem.
 - `destination_backup_vault_name`: O nome do vault de destino.
 - `iam_role_arn`: O ARN do IAM Role usado para realizar operações de cópia.
+
+### Substituições Necessárias:
+- `nome_do_vault_sa_east_1`: Substitua pelo nome real do vault na região sa-east-1.
+- `nome_do_vault_us_east_1`: Substitua pelo nome real do vault na região us-east-1.
+- `nome_do_vault_eu_central_1`: Substitua pelo nome real do vault na região eu-central-1.
+- `arn:aws:iam::00000000000:role/nome_do_iam_role`: Substitua pelo ARN real do IAM Role.
 
 ## Como Usar
 
@@ -33,6 +32,9 @@ Antes de implantar a função Lambda, defina as seguintes variáveis de ambiente
 ## Contribuição
 
 Contribuições são bem-vindas! Abra um issue ou envie um pull request com melhorias ou correções.
+
+
+- ` Esse código garantirá que apenas os recovery points criados no dia atual sejam copiados dos vaults nas regiões sa-east-1 e us-east-1 para o vault na região eu-central-1. `
 
 ```bash
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
