@@ -31,6 +31,7 @@ Antes de implantar a função Lambda, defina as seguintes variáveis de ambiente
 4. Configure um evento agendado para acionar a função Lambda diariamente às 07:00.
 
 ## Contribuição
+
 Contribuições são bem-vindas! Abra um issue ou envie um pull request com melhorias ou correções.
 
 ```bash
