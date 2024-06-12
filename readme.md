@@ -4,9 +4,10 @@ Este é um lambda function para copiar os recovery points do AWS Backup de um ou
 
 ## Configuração
 
-### IAM Role
+### IAM Role e KMS KEY
 
 Certifique-se de que o IAM Role associado à função Lambda tenha permissões suficientes para realizar as operações necessárias, como listar recovery points, iniciar jobs de cópia e verificar o status dos jobs.
+Certifique-se de que todos os dados estão com KMS KEY, inclusive os Vault e que estão compartilhados entre contas.
 
 ### Configurações Específicas
 
@@ -34,7 +35,8 @@ Certifique-se de que o IAM Role associado à função Lambda tenha permissões s
 Contribuições são bem-vindas! Abra um issue ou envie um pull request com melhorias ou correções.
 
 
-- ` Esse código garantirá que apenas os recovery points criados no dia atual sejam copiados dos vaults nas regiões sa-east-1 e us-east-1 para o vault na região eu-central-1. `
+- ` Esse código garantirá que apenas os recovery points criados no dia atual sejam copiados dos vaults nas regiões sa-east-1 e us-east-1 para o vault na região eu-central-1.`
+- ` Cuidado com custos de data transfer.`
 
 ```bash
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
